@@ -2,7 +2,7 @@ function actualizarNum(num) {
 
   const resultado = document.getElementById("resultado");
 
-  if (resultado.innerHTML === "Resultado") {
+  if (resultado.innerHTML === "Resultado" || resultado.innerHTML === "Error") {
 
     resultado.innerHTML = num;
 
@@ -25,7 +25,7 @@ function agregarSimbolo(simbolo) {
 
     resultado.innerHTML = "Error"
 
-  } else if ((resultado.innerHTML).slice(-1) !== "+" && (resultado.innerHTML).slice(-1) !== "-"){
+  } else if ((resultado.innerHTML).slice(-1) !== "+" && (resultado.innerHTML).slice(-1) !== "-") {
 
     resultado.innerHTML += simbolo
 
@@ -43,11 +43,57 @@ function borrar() {
 
     resultado.innerHTML = (resultado.innerHTML).slice(0, -1)
 
-    if (resultado.innerHTML === "") {
+    if (resultado.innerHTML === "" || resultado.innerHTML === "Error") {
 
       resultado.innerHTML = "Resultado"
-    
+
     }
+
+  }
+}
+
+function resultado() {
+  const resultado = document.getElementById("resultado");
+
+  if (resultado.innerHTML !== "Resultado" && resultado.innerHTML !== "Error") {
+
+    términos = resultado.innerHTML.split("+", "-", "*", "/")
+
+    /*término.array.forEach(op => {
+      console.log(op)
+      num = op.split("*", "/")
+
+      console.log(op)
+      
+      
+    });*/
+
+  }
+}
+
+function operacion() {
+
+  const resultado = document.getElementById("resultado");
+
+  if (resultado.includes("/")) {
+
+    num = resultado.split("/")
+    resultado.innerHTML = num[0] / num[1];
+
+  } else if (resultado.includes("*")) {
+
+    num = resultado.split("*")
+    resultado.innerHTML = num[0] * num[1];
+
+  } else if (resultado.includes("+")) {
+
+    num = resultado.split("+")
+    resultado.innerHTML = num[0] + num[1];
+
+  } else if (resultado.value === "-") {
+
+    num = resultado.split("-")
+    resultado.innerHTML = num[0] - num[1];
 
   }
 }
