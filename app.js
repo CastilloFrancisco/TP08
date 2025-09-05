@@ -71,29 +71,21 @@ function resultado() {
   }
 }
 
-function operacion() {
 
-  const resultado = document.getElementById("resultado");
+let mem
 
-  if (resultado.includes("/")) {
+function memoria(){
 
-    num = resultado.split("/")
-    resultado.innerHTML = num[0] / num[1];
+  mem = document.getElementById("resultado");
 
-  } else if (resultado.includes("*")) {
-
-    num = resultado.split("*")
-    resultado.innerHTML = num[0] * num[1];
-
-  } else if (resultado.includes("+")) {
-
-    num = resultado.split("+")
-    resultado.innerHTML = num[0] + num[1];
-
-  } else if (resultado.value === "-") {
-
-    num = resultado.split("-")
-    resultado.innerHTML = num[0] - num[1];
-
-  }
 }
+
+function restaurarMemoria(){
+
+  if(mem !== 0){
+    resultado  = document.getElementById("resultado");
+    resultado.innerHTML += mem
+  }
+
+}
+
