@@ -27,38 +27,25 @@
 
             <body>
                 <main class="calculator">
-                    <header class="calc-header">
-                        <h1 id="resultado" class="display">0</h1>
-                    </header>
 
-                    <section class="buttons">
+                    <h2>Número 1:</h2>
+                    <input type="number" id="n1">
 
-                        <button class="btn clear" onclick="C()">C</button>
-                        <button class="btn del" onclick="borrar()">⌫</button>
-                        <button class="btn mem" onclick="memoria('*')">M</button>
-                        <button class="btn mem" onclick="ponerMemoria('/')">M+</button>
+                    <h2>Número 2:</h2>
+                    <input type="number" id="n2">
 
-                        <button class="btn" onclick="actualizarNum('7')">7</button>
-                        <button class="btn" onclick="actualizarNum('8')">8</button>
-                        <button class="btn" onclick="actualizarNum('9')">9</button>
-                        <button class="btn op" onclick="agregarSimbolo('/')">÷</button>
+                    <h2>Operación:</h2>
+                    <select id="operación">
+                        <option value="+">+</option>
+                        <option value="-">−</option>
+                        <option value="*">×</option>
+                        <option value="/">÷</option>
+                    </select>
 
-                        <button class="btn" onclick="actualizarNum('4')">4</button>
-                        <button class="btn" onclick="actualizarNum('5')">5</button>
-                        <button class="btn" onclick="actualizarNum('6')">6</button>
-                        <button class="btn op" onclick="agregarSimbolo('*')">×</button>
+                    <button onclick="operacion()">=</button>
 
-                        <button class="btn" onclick="actualizarNum('1')">1</button>
-                        <button class="btn" onclick="actualizarNum('2')">2</button>
-                        <button class="btn" onclick="actualizarNum('3')">3</button>
-                        <button class="btn op" onclick="agregarSimbolo('-')">−</button>
+                    <p id="resultado">Resultado</p>
 
-                        <button class="btn zero" onclick="actualizarNum('0')">0</button>
-                        <button class="btn" onclick="agregarSimbolo('.')">.</button>
-                        <!-- No estaba en la consigna pero lo vi en el ejemplo y no cambia la lógica -->
-                        <button class="btn equal" onclick="igual()">=</button>
-                        <button class="btn op" onclick="agregarSimbolo('+')">+</button>
-                    </section>
                 </main>
             </body>
 
